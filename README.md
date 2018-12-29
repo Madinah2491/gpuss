@@ -1,1 +1,1 @@
-# gpuss
+# Glamour Puss is an interactive application that brings makeup artists to customers unlike ever before.
