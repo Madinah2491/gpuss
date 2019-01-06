@@ -1,10 +1,18 @@
 var express = require('express');
-var bodyParser=require('body-parser');
-var Port= process.env.Port|| 5000||8080;
+var bodyParser = require('body-parser');
+var exphbs  = require('express-handlebars');
 
-var app= express();
+//self instanciating constructor
+var app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json({ type: 'application/*+json' }))
+app.use(bodyParser.urlencoded({ extended: true })) // extended true allows objects to be passed thru 
+app.use(bodyParser.json())
 
-app.listen(Port);
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+app.get('/', function(Request, Response){
+    console.log("I'm working");
+});
+
+app.listen
