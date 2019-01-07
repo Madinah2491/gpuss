@@ -11,8 +11,9 @@ app.use(bodyParser.json())
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-app.get('/', function(Request, Response){
+app.get('/', function(request, response){
     console.log("I'm working");
+    response.render('index');
 });
 
 app.listen
